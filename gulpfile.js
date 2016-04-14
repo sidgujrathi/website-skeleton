@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps')
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
-    uglifycss = require('gulp-uglifycss');
+    uglifycss = require('gulp-uglifycss'),
+    merge = require('merge-stream');
 
 
 gulp.task("default",['watch']);
@@ -15,6 +16,7 @@ gulp.task("watch",['build-lib'], function(){
 	gulp.watch("src/assets/css/**/*.css",['product-css']);
 	gulp.watch("src/assets/js/**/*.js",['product-js']);
 	gulp.watch(['src/assets/img/*','src/assets/img/**/*'],['build-img']);
+	gulp.watch("src/**/*.html",['product-html']);
 
 });
 
@@ -54,4 +56,16 @@ gulp.task("product-js", function(){
 gulp.task('build-img',function(){
 	return gulp.src('src/assets/img/*.*')
 	    .pipe(gulp.dest('dist/assets/img/'));
+});
+
+//Get all html and put them to dist
+gulp.task('product-html',function(){
+	var index = gulp.src('src/index.html')
+		.pipe(concat('index.html'))
+	    .pipe(gulp.dest('dist/'));
+
+	var all_foldersFiles = gulp.src('src/**/*.html')
+	    .pipe(gulp.dest('dist/')); 
+
+	return merge(index,all_foldersFiles);	     	
 });
