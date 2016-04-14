@@ -1,0 +1,25 @@
+{
+  "name": "website-skeleton",
+  "description": "Website skeleton for a typical HTML5, Bootstrap website with Jquery, SASS, Gulp build script.",
+  "main": "index.js",
+  "authors": [
+    "Siddharth Gujrathi"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "HTML5",
+    "Website",
+    "website",
+    "bootstrap-website",
+    "template",
+    "skeleton"
+  ],
+  "homepage": "https://github.com/sidgujrathi/website-skeleton",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

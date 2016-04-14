@@ -1,0 +1,30 @@
+{
+  "name": "website-skeleton",
+  "version": "1.0.0",
+  "description": "Website skeleton for a typical HTML5, Bootstrap website with Jquery, SASS, Gulp build script.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidgujrathi/website-skeleton.git"
+  },
+  "keywords": [
+    "HTML5",
+    "Website",
+    "website",
+    "bootstrap-website",
+    "template",
+    "skeleton"
+  ],
+  "author": "Siddharth Gujrathi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sidgujrathi/website-skeleton/issues"
+  },
+  "homepage": "https://github.com/sidgujrathi/website-skeleton#readme",
+  "devDependencies": {
+    "bower": "^1.7.9"
+  }
+}
