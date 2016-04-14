@@ -13,6 +13,7 @@ gulp.task("default",['watch']);
 gulp.task("watch",['build-lib'], function(){
 	gulp.watch("src/sass/*",['build-sass']);
 	gulp.watch("src/assets/css/**/*.css",['product-css']);
+	gulp.watch("src/assets/js/**/*.js",['product-js']);
 
 });
 
@@ -37,4 +38,14 @@ gulp.task("product-css", function(){
 			.pipe(uglifycss())
 			.pipe(sourcemaps.write())
 			.pipe(gulp.dest('dist/assets/css/'));
+});
+
+//Build, minify all javascript for distribution
+gulp.task("product-js", function(){
+	return gulp.src('src/assets/js/*.js')
+	   .pipe(sourcemaps.init())
+		.pipe(concat('main.min.js'))
+	    .pipe(uglify()) 
+	    .pipe(sourcemaps.write())
+		.pipe(gulp.dest('dist/assets/js/')); 
 });
