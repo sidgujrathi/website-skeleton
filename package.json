@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall":"bower install"
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,12 @@
   },
   "homepage": "https://github.com/sidgujrathi/website-skeleton#readme",
   "devDependencies": {
-    "bower": "^1.7.9"
+    "bower": "^1.7.9",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7"
   }
 }
