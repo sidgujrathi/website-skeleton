@@ -14,6 +14,7 @@ gulp.task("watch",['build-lib'], function(){
 	gulp.watch("src/sass/*",['build-sass']);
 	gulp.watch("src/assets/css/**/*.css",['product-css']);
 	gulp.watch("src/assets/js/**/*.js",['product-js']);
+	gulp.watch(['src/assets/img/*','src/assets/img/**/*'],['build-img']);
 
 });
 
@@ -48,4 +49,9 @@ gulp.task("product-js", function(){
 	    .pipe(uglify()) 
 	    .pipe(sourcemaps.write())
 		.pipe(gulp.dest('dist/assets/js/')); 
+});
+//Get all images and put them to dist
+gulp.task('build-img',function(){
+	return gulp.src('src/assets/img/*.*')
+	    .pipe(gulp.dest('dist/assets/img/'));
 });
